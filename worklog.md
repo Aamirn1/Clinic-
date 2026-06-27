@@ -128,3 +128,23 @@ Stage Summary:
 - Premium features delivered: AI chatbot (LLM), appointment booking w/ DB persistence, dark mode, animated counters, testimonial carousel, Google Maps embed, WhatsApp/back-to-top, newsletter, contact form.
 - Fully responsive (mobile + desktop), accessible, SEO metadata, sticky footer.
 - All lint clean; dev server running on port 3000.
+
+---
+Task ID: R2 (Revision Round 2)
+Agent: Orchestrator (Z.ai Code)
+Task: Apply gradient color theme, fix burger menu, add favicon + social preview, push to GitHub.
+
+Work Log:
+- GRADIENT THEME: Added .btn-gradient (emerald→gold, always visible) and .bg-brand-gradient utilities in globals.css. Applied to all primary CTAs (header, hero, booking, contact, chatbot send), logo icon, chatbot header, booking info panel, footer newsletter banner, about mission icon, testimonial avatars. Added animated gradient-text shimmer on hero headline. Fixed a background-size bug that was hiding the gold.
+- BURGER MENU FIX: Redesigned mobile Sheet — gradient header with proper spacing (no logo/text overlap), explicit close button, nav links now each have an icon (Home/Services/About/Eyewear/Team/FAQ/Contact), safe-area-aware bottom padding so Book Appointment is never cut off, Call + Light/Dark grid at bottom.
+- FAVICON: Created crisp SVG favicon (eye+frame on emerald→gold gradient) + 32px PNG + 180px apple-touch-icon + 512px icon. Registered in layout.tsx icons + <head> links.
+- SOCIAL PREVIEW: Designed 1200x630 og-image as HTML banner (gradient bg, clinic name, headline, stats, CTA) → screenshotted to /public/og-image.png (VLM rated 9/10). Added openGraph.images, twitter:card summary_large_image, theme-color, robots, metadataBase in layout.tsx.
+- GITHUB PUSH: Untracked .env + db/custom.db (added to .gitignore), added .env.example. Committed 18 files. Pushed to https://github.com/Aamirn1/Clinic- (main branch, verified via API). Removed token from git config after push.
+- VERIFIED: lint clean; all favicons/og-image return HTTP 200; gradient buttons confirmed visible; burger menu confirmed fixed (no overlap, icons, button fully visible); page title correct; no runtime errors.
+
+Stage Summary:
+- Gradient emerald→gold theme applied across the site.
+- Mobile burger menu fully corrected (icons + no cut-off + no overlap).
+- Favicon (SVG+PNG) and 1200x630 social preview image live; OG/Twitter meta tags set.
+- Code pushed to GitHub repo Aamirn1/Clinic- (main branch).
+- NOTE for user: set NEXT_PUBLIC_SITE_URL env var on Vercel to their final domain for absolute og:image URLs; set DATABASE_URL for booking/chat to work on Vercel.
