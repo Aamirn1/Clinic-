@@ -85,7 +85,7 @@ export function Footer() {
       <div className="pointer-events-none absolute -left-32 -top-20 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         {/* Newsletter banner */}
-        <div className="mb-12 flex flex-col items-center gap-6 rounded-3xl border border-border/60 bg-gradient-to-br from-primary to-emerald-800 p-8 text-center text-primary-foreground shadow-xl lg:flex-row lg:justify-between lg:text-left">
+        <div className="mb-12 flex flex-col items-center gap-6 rounded-3xl border border-border/60 bg-brand-gradient p-8 text-center text-primary-foreground shadow-xl lg:flex-row lg:justify-between lg:text-left">
           <div className="max-w-lg">
             <h3 className="text-2xl font-semibold font-[var(--font-playfair-display)]">
               Eye care tips, straight to your inbox
@@ -120,7 +120,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-4">
             <Link href="#home" className="flex items-center gap-2.5">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-emerald-700 text-primary-foreground shadow-md">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gradient text-primary-foreground shadow-md">
                 <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
                   <path
                     d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z"

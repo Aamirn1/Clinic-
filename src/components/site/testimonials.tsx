@@ -86,7 +86,7 @@ export function Testimonials() {
                     "{t.text}"
                   </p>
                   <div className="mt-6 flex items-center gap-3 border-t border-border/60 pt-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-primary to-emerald-700 text-sm font-bold text-primary-foreground">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-primary-foreground">
                       {t.initials}
                     </div>
                     <div>

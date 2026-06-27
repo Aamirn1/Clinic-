@@ -102,7 +102,7 @@ export function Chatbot() {
               transition={{ type: "spring", stiffness: 260, damping: 20 }}
               onClick={() => setOpen(true)}
               aria-label="Open chat assistant"
-              className="relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-emerald-700 text-primary-foreground shadow-xl shadow-primary/30 transition-transform hover:scale-105"
+              className="relative flex h-14 w-14 items-center justify-center rounded-full bg-brand-gradient text-primary-foreground shadow-xl shadow-primary/30 transition-transform hover:scale-105"
             >
               <span className="absolute inset-0 animate-pulse-ring rounded-full" />
               <MessageCircle className="h-6 w-6" />
@@ -128,7 +128,7 @@ export function Chatbot() {
             className="fixed bottom-4 right-4 z-50 flex h-[85vh] w-[calc(100vw-2rem)] max-w-[400px] flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-2xl sm:bottom-6 sm:right-6 sm:h-[600px]"
           >
             {/* Header */}
-            <div className="flex items-center justify-between gap-3 bg-gradient-to-br from-primary to-emerald-800 p-4 text-primary-foreground">
+            <div className="flex items-center justify-between gap-3 bg-brand-gradient p-4 text-primary-foreground">
               <div className="flex items-center gap-3">
                 <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-primary-foreground/15">
                   <Bot className="h-5 w-5" />
@@ -259,7 +259,7 @@ export function Chatbot() {
                 type="submit"
                 size="icon"
                 disabled={loading || !input.trim()}
-                className="h-10 w-10 shrink-0 bg-primary hover:bg-primary/90"
+                className="btn-gradient h-10 w-10 shrink-0 border-0 text-primary-foreground"
                 aria-label="Send message"
               >
                 <Send className="h-4 w-4" />

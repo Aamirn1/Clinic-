@@ -118,7 +118,7 @@ export function Booking() {
         <div className="mt-14 grid gap-8 lg:grid-cols-5">
           {/* Left: info panel */}
           <Reveal className="lg:col-span-2">
-            <div className="flex h-full flex-col gap-6 rounded-3xl border border-border/60 bg-gradient-to-br from-primary to-emerald-800 p-7 text-primary-foreground shadow-xl">
+            <div className="flex h-full flex-col gap-6 rounded-3xl border border-border/60 bg-brand-gradient p-7 text-primary-foreground shadow-xl">
               <div>
                 <h3 className="text-2xl font-semibold font-[var(--font-playfair-display)]">
                   Why book with us?
@@ -199,7 +199,7 @@ export function Booking() {
                         Book another
                       </Button>
                       <a href={`tel:${business.phoneRaw}`}>
-                        <Button className="gap-2 bg-primary">
+                        <Button className="btn-gradient gap-2 border-0 text-primary-foreground">
                           <Phone className="h-4 w-4" /> Call us now
                         </Button>
                       </a>
@@ -338,7 +338,7 @@ export function Booking() {
                       type="submit"
                       size="lg"
                       disabled={!canSubmit || loading}
-                      className="w-full gap-2 bg-primary shadow-lg shadow-primary/20 hover:bg-primary/90 disabled:opacity-50"
+                      className="btn-gradient w-full gap-2 border-0 text-primary-foreground shadow-lg shadow-primary/20 disabled:opacity-50"
                     >
                       {loading ? (
                         <>

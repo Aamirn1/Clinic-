@@ -39,7 +39,7 @@ export function Hero() {
               className="text-4xl font-semibold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl font-[var(--font-playfair-display)]"
             >
               See the world{" "}
-              <span className="gradient-text">in perfect clarity</span> with expert eye care
+              <span className="gradient-text gradient-text-animate">in perfect clarity</span> with expert eye care
             </motion.h1>
 
             <motion.p
@@ -59,7 +59,7 @@ export function Hero() {
               className="flex flex-wrap items-center gap-3"
             >
               <Link href="#booking">
-                <Button size="lg" className="gap-2 bg-primary px-6 shadow-lg shadow-primary/20 hover:bg-primary/90">
+                <Button size="lg" className="btn-gradient gap-2 border-0 px-6 text-primary-foreground shadow-lg shadow-primary/20">
                   <CalendarCheck className="h-5 w-5" />
                   Book Appointment
                 </Button>

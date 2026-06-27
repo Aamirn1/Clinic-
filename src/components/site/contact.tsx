@@ -233,7 +233,7 @@ export function Contact() {
                   type="submit"
                   size="lg"
                   disabled={loading}
-                  className="w-full gap-2 bg-primary shadow-lg shadow-primary/20 hover:bg-primary/90"
+                  className="btn-gradient w-full gap-2 border-0 text-primary-foreground shadow-lg shadow-primary/20"
                 >
                   {loading ? (
                     <>

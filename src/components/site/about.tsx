@@ -100,7 +100,7 @@ export function About() {
               className="absolute -bottom-6 left-4 right-4 rounded-2xl border border-border/60 bg-background/95 p-5 shadow-xl backdrop-blur-md sm:left-8 sm:right-8"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-emerald-700 text-primary-foreground">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gradient text-primary-foreground">
                   <Target className="h-5 w-5" />
                 </div>
                 <div>
