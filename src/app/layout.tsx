@@ -65,9 +65,11 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og-image.png",
+        secureUrl: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "Islamabad Optical & Clinic — See the world in perfect clarity",
+        type: "image/png",
       },
     ],
     locale: "en_PK",
@@ -77,7 +79,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Islamabad Optical & Clinic",
     description: "Premier eye care & eyewear in Islamabad. Book your appointment today.",
-    images: ["/og-image.png"],
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Islamabad Optical & Clinic — See the world in perfect clarity",
+      },
+    ],
     creator: "@islamabadoptical",
   },
   robots: {
