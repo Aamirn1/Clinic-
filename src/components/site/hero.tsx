@@ -10,11 +10,23 @@ import { business } from "@/lib/data";
 export function Hero() {
   return (
     <section id="home" className="relative overflow-hidden pt-16">
-      {/* Background layers */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/5 via-background to-background" />
-      <div className="absolute inset-0 -z-10 bg-grid dark:bg-grid-dark opacity-60 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
+      {/* Full-bleed background image */}
+      <div className="absolute inset-0 -z-20">
+        <Image
+          src="/hero-bg.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
+      {/* Dark gradient overlay for text readability — stronger on the left/bottom */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-background via-background/85 to-background/55" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-background via-background/40 to-transparent" />
+      {/* Subtle amber glow accents */}
       <div className="pointer-events-none absolute -right-32 -top-20 -z-10 h-96 w-96 rounded-full bg-accent/20 blur-3xl" />
-      <div className="pointer-events-none absolute -left-32 top-40 -z-10 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
+      <div className="pointer-events-none absolute -left-32 top-40 -z-10 h-96 w-96 rounded-full bg-primary/15 blur-3xl" />
 
       <div className="mx-auto max-w-7xl px-4 pb-16 pt-12 sm:px-6 sm:pt-16 lg:px-8 lg:pb-24 lg:pt-24">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
@@ -24,7 +36,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary"
+              className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary backdrop-blur-sm"
             >
               <span className="flex h-2 w-2 rounded-full bg-accent">
                 <span className="h-2 w-2 animate-ping rounded-full bg-accent opacity-75" />
@@ -36,7 +48,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.05 }}
-              className="text-4xl font-semibold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl font-[var(--font-playfair-display)]"
+              className="text-4xl font-semibold leading-[1.05] tracking-tight text-balance text-foreground sm:text-5xl lg:text-6xl font-[var(--font-playfair-display)]"
             >
               See the world{" "}
               <span className="gradient-text gradient-text-animate">in perfect clarity</span> with expert eye care
@@ -46,7 +58,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.12 }}
-              className="max-w-xl text-base text-muted-foreground text-balance sm:text-lg"
+              className="max-w-xl text-base text-foreground/80 text-balance sm:text-lg"
             >
               {business.name} brings together advanced diagnostics, premium eyewear, and caring
               specialists — so you and your family enjoy a lifetime of healthy, clear vision.
@@ -59,13 +71,13 @@ export function Hero() {
               className="flex flex-wrap items-center gap-3"
             >
               <Link href="#booking">
-                <Button size="lg" className="btn-gradient gap-2 border-0 px-6 text-primary-foreground shadow-lg shadow-primary/20">
+                <Button size="lg" className="btn-gradient gap-2 border-0 px-6 font-semibold shadow-lg shadow-primary/30">
                   <CalendarCheck className="h-5 w-5" />
                   Book Appointment
                 </Button>
               </Link>
               <a href={`tel:${business.phoneRaw}`}>
-                <Button size="lg" variant="outline" className="gap-2 px-6">
+                <Button size="lg" variant="outline" className="gap-2 border-border/50 bg-background/40 px-6 text-foreground backdrop-blur-sm hover:bg-background/70">
                   <Phone className="h-4 w-4" />
                   {business.phone}
                 </Button>
@@ -85,29 +97,29 @@ export function Hero() {
                     <Star key={i} className="h-4 w-4 fill-accent text-accent" />
                   ))}
                 </div>
-                <span className="text-sm font-medium text-muted-foreground">
+                <span className="text-sm font-medium text-foreground/80">
                   4.9/5 · 1,200+ reviews
                 </span>
               </div>
-              <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+              <div className="flex items-center gap-2 text-sm font-medium text-foreground/80">
                 <ShieldCheck className="h-4 w-4 text-primary" />
                 Certified Optometrists
               </div>
-              <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+              <div className="flex items-center gap-2 text-sm font-medium text-foreground/80">
                 <Award className="h-4 w-4 text-primary" />
                 15+ Years Experience
               </div>
             </motion.div>
           </div>
 
-          {/* Visual */}
+          {/* Visual — glass card over the background image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-border/60 shadow-2xl shadow-primary/10 sm:aspect-[5/4] lg:aspect-[4/5]">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-white/15 shadow-2xl shadow-black/40 sm:aspect-[5/4] lg:aspect-[4/5]">
               <Image
                 src="/images/hero-eye.jpg"
                 alt="Premium optical store interior at Islamabad Optical & Clinic"
@@ -116,7 +128,7 @@ export function Hero() {
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             </div>
 
             {/* Floating card - top */}
@@ -124,10 +136,10 @@ export function Hero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="absolute -left-4 top-8 hidden rounded-2xl border border-border/60 bg-background/90 p-4 shadow-xl backdrop-blur-md sm:block"
+              className="absolute -left-4 top-8 hidden rounded-2xl border border-white/15 bg-background/80 p-4 shadow-xl backdrop-blur-md sm:block"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15 text-primary">
                   <ShieldCheck className="h-5 w-5" />
                 </div>
                 <div>
@@ -142,11 +154,11 @@ export function Hero() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="absolute -bottom-5 -right-2 hidden rounded-2xl border border-border/60 bg-background/90 p-4 shadow-xl backdrop-blur-md sm:block"
+              className="absolute -bottom-5 -right-2 hidden rounded-2xl border border-white/15 bg-background/80 p-4 shadow-xl backdrop-blur-md sm:block"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/15 text-accent-foreground">
-                  <Award className="h-5 w-5 text-accent" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/20 text-accent">
+                  <Award className="h-5 w-5" />
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground">Trusted by</p>
@@ -158,7 +170,7 @@ export function Hero() {
             {/* Explore link */}
             <Link
               href="#services"
-              className="group absolute -left-4 bottom-20 hidden items-center gap-2 rounded-full border border-border/60 bg-background/90 px-4 py-2 text-sm font-medium shadow-lg backdrop-blur-md transition-colors hover:border-primary/40 hover:text-primary sm:flex"
+              className="group absolute -left-4 bottom-20 hidden items-center gap-2 rounded-full border border-white/15 bg-background/80 px-4 py-2 text-sm font-medium shadow-lg backdrop-blur-md transition-colors hover:border-primary/40 hover:text-primary sm:flex"
             >
               Explore services
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -168,7 +180,7 @@ export function Hero() {
       </div>
 
       {/* Trust marquee */}
-      <div className="relative border-y border-border/60 bg-primary/5 py-4">
+      <div className="relative border-y border-border/60 bg-background/60 py-4 backdrop-blur-sm">
         <div className="mx-auto flex max-w-7xl items-center gap-8 overflow-hidden px-4">
           <p className="shrink-0 text-xs font-semibold uppercase tracking-widest text-primary">
             Trusted brands
